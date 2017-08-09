@@ -79,7 +79,7 @@ async function schedule(scheduler, msg, fn) {
     return res.body;
   } catch (err) {
     logger.silly(`Finished request id=${requestId} status=FAILURE`);
-    setTimeout(resource.release, timeToNextRequest(err));
+    setTimeout(resource.release, timeToNextRequest(res));
     throw err;
   }
 }
